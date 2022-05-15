@@ -1,0 +1,25 @@
+type News {
+    id: Int!
+    title: String!
+    author: String
+    views: Int!
+    publishDate: String!
+}
+
+input InputNews {
+    title: String!
+    author: String
+    views: Int!
+    publishDate: String!
+}
+
+extend type Query {
+    news: [News]!
+    newsById(id: Int!): News
+}
+
+extend type Mutation {
+    newNews(input: InputNews!): News!
+    updateNews(input: InputNews!): News!
+    removeNews(id: Int!): News!
+}
