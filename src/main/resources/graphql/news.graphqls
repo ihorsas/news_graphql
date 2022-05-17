@@ -7,6 +7,7 @@ type News {
 }
 
 input InputNews {
+    id: Int
     title: String!
     author: String
     views: Int!
